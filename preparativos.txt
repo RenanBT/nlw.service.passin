@@ -1,0 +1,32 @@
+dev:
+    prepatativo:
+    - pnpm install
+    - pnpm prisma generate
+
+    execucao:
+    - pnpm dev
+
+prod:
+
+     prepatativo:
+    - pnpm install
+    - pnpm prisma generate
+    - pnpm build
+    - pnpm prune --prod 
+
+
+    execucao:
+    - pnpm start
+
+
+/*
+docker build -t passin:v1 .
+docker run -p 3001:3333 passin:v1
+docker run -p 3001:3333 -d passin:v2
+docker ps //display quais containeres estao rodando
+docker logs
+docker compose --build -d
+docker -compose down
+docker -compose up -d
+
+*/
